@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Eyes" load_steps=4 format=3 uid="uid://l3maoob5xyst"]
+
+[ext_resource type="Texture2D" uid="uid://b33ac4ifirhoq" path="res://assets/actors/sprites/char_eye2.svg" id="1_oe1hu"]
+[ext_resource type="Texture2D" uid="uid://ba6xcy0p53fro" path="res://assets/actors/sprites/char_eye2c.svg" id="2_tsw4s"]
+[ext_resource type="Script" path="res://src/character_builder/eyes.gd" id="3_kxv0i"]
+
+[resource]
+script = ExtResource("3_kxv0i")
+eye = ExtResource("1_oe1hu")
+eye_color = ExtResource("2_tsw4s")
+color_offset = Vector3(0, -0.01, 0)
+color_scale = 0.0
+name = "Eyes 03"
+available_in_builder = true
+offset = Vector3(0, 0, 0)
+scale = 0.0

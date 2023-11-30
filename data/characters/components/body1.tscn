@@ -1,0 +1,143 @@
+[gd_scene load_steps=9 format=3 uid="uid://0q0q6gtylpfh"]
+
+[ext_resource type="PackedScene" uid="uid://d1ip73j6mr4t8" path="res://assets/actors/models/body1.blend" id="1_yy0jf"]
+[ext_resource type="Script" path="res://src/character_builder/character_body.gd" id="2_cn0py"]
+[ext_resource type="Resource" uid="uid://dunbsm7kahj3b" path="res://data/characters/components/eyes_03.tres" id="3_41e65"]
+[ext_resource type="Texture2D" uid="uid://dsh0jidh1sgat" path="res://assets/actors/textures/baked_base.png" id="4_ufwum"]
+[ext_resource type="Texture2D" uid="uid://1k1i2jxdma3f" path="res://assets/actors/sprites/char_nose1.svg" id="5_g1xox"]
+[ext_resource type="Texture2D" uid="uid://cc5r3ntmp8or4" path="res://assets/actors/sprites/char_eye3.svg" id="5_ii62h"]
+[ext_resource type="Texture2D" uid="uid://dxtc82ig55731" path="res://assets/actors/sprites/char_mouth1.svg" id="6_64er2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cr6ql"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("4_ufwum")
+roughness = 0.5
+
+[node name="body1" instance=ExtResource("1_yy0jf")]
+transform = Transform3D(0.999416, 0, 0, 0, 0.999416, 0, 0, 0, 0.999416, 0, 0, 0)
+script = ExtResource("2_cn0py")
+eyes = ExtResource("3_41e65")
+eye_color = Color(0.301961, 0.152941, 0.0627451, 1)
+hair_color = Color(0.341176, 0.164706, 0.0823529, 1)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(5.12569e-11, 0.448067, 0.028655)
+bones/0/rotation = Quaternion(-0.0653522, 1.18954e-07, -7.79058e-09, 0.997862)
+bones/1/rotation = Quaternion(0.118697, -1.18366e-07, 1.41498e-08, 0.99293)
+bones/2/rotation = Quaternion(-0.00445335, -6.87273e-15, -3.32051e-16, 0.99999)
+bones/3/rotation = Quaternion(0.0344192, 0.116275, -0.96605, 0.228129)
+bones/4/rotation = Quaternion(0.172893, -0.0625358, -0.12022, 0.975574)
+bones/5/rotation = Quaternion(0.0344192, -0.116275, 0.96605, 0.228129)
+bones/6/rotation = Quaternion(0.172893, 0.0625359, 0.12022, 0.975574)
+bones/8/rotation = Quaternion(-0.833798, -0.109888, -0.503331, 0.198402)
+bones/9/rotation = Quaternion(-0.242035, 0.00605746, 0.010786, 0.970188)
+bones/10/rotation = Quaternion(-0.782729, -0.148238, -0.579137, 0.173091)
+bones/11/rotation = Quaternion(-0.242035, -0.00605764, -0.010786, 0.970188)
+
+[node name="character" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cr6ql")
+
+[node name="eye_left" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(1, -2.95384e-15, 4.3629e-16, 1.48286e-15, 0.995177, -0.0980937, -2.90276e-14, 0.0980937, 0.995177, 5.12551e-11, 1.06925, 0.0352382)
+bone_name = "spine.002"
+bone_idx = 2
+
+[node name="eye_left_position" type="Marker3D" parent="Armature/Skeleton3D/eye_left" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(0.984808, -4.23516e-22, 0.173648, -2.32831e-10, 1, 0, -0.173648, 0, 0.984808, 0.15, 0.438402, 0.415492)
+gizmo_extents = 0.0
+
+[node name="eye_left_color_sprite" type="Sprite3D" parent="Armature/Skeleton3D/eye_left/eye_left_position" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.05879e-21, 3.38813e-21, -4.23516e-22, 1, 1.86265e-09, 0, 0, 1, 0, -0.02, 0)
+sorting_offset = -1.0
+modulate = Color(0.172549, 0.376471, 0.517647, 1)
+pixel_size = 0.0013
+double_sided = false
+
+[node name="eye_left_sprite" type="Sprite3D" parent="Armature/Skeleton3D/eye_left/eye_left_position" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(1, -8.47033e-22, 3.38813e-21, 0, 1, 0, 1.49012e-08, 0, 1, -7.45058e-09, 3.6478e-05, 0.00187159)
+pixel_size = 0.0013
+double_sided = false
+texture = ExtResource("5_ii62h")
+
+[node name="eye_right" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
+unique_name_in_owner = true
+transform = Transform3D(1, -2.95384e-15, 4.3629e-16, 1.48286e-15, 0.995177, -0.0980937, -2.90276e-14, 0.0980937, 0.995177, 5.12551e-11, 1.06925, 0.0352382)
+bone_name = "spine.002"
+bone_idx = 2
+
+[node name="eye_right_position" type="Marker3D" parent="Armature/Skeleton3D/eye_right" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(0.984808, -4.23516e-22, -0.173648, 2.32831e-10, 1, 0, 0.173648, 0, 0.984808, -0.15, 0.438402, 0.415492)
+gizmo_extents = 0.0
+
+[node name="eye_right_color_sprite" type="Sprite3D" parent="Armature/Skeleton3D/eye_right/eye_right_position" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.05879e-21, 3.38813e-21, -4.23516e-22, 1, 1.86265e-09, 0, 0, 1, 0, -0.02, 0)
+sorting_offset = -1.0
+flip_h = true
+modulate = Color(0.172549, 0.376471, 0.517647, 1)
+pixel_size = 0.0013
+double_sided = false
+
+[node name="eye_right_sprite" type="Sprite3D" parent="Armature/Skeleton3D/eye_right/eye_right_position" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(1, -8.47033e-22, 3.38813e-21, -2.77556e-17, 1, 0, -1.49012e-08, 0, 1, -0.000753455, 3.6478e-05, -0.00240171)
+flip_h = true
+pixel_size = 0.0013
+double_sided = false
+texture = ExtResource("5_ii62h")
+
+[node name="nose" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="3"]
+unique_name_in_owner = true
+transform = Transform3D(1, -2.95384e-15, 4.3629e-16, 1.48286e-15, 0.995177, -0.0980937, -2.90276e-14, 0.0980937, 0.995177, 5.12551e-11, 1.06925, 0.0352382)
+bone_name = "spine.002"
+bone_idx = 2
+
+[node name="nose_position" type="Marker3D" parent="Armature/Skeleton3D/nose" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, -2.11758e-21, 0, -1.05879e-21, 1, 0, 0, 0, 1, 4.67342e-17, 0.269979, 0.450905)
+gizmo_extents = 0.0
+
+[node name="nose_sprite" type="Sprite3D" parent="Armature/Skeleton3D/nose/nose_position" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.05879e-21, 0, -5.29396e-22, 1, 0, 0, 0, 1, -1.11903e-16, 5.16176e-05, 0.0026218)
+pixel_size = 0.0013
+double_sided = false
+texture = ExtResource("5_g1xox")
+
+[node name="mouth" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="4"]
+unique_name_in_owner = true
+transform = Transform3D(1, -2.95384e-15, 4.3629e-16, 1.48286e-15, 0.995177, -0.0980937, -2.90276e-14, 0.0980937, 0.995177, 5.12551e-11, 1.06925, 0.0352382)
+bone_name = "spine.002"
+bone_idx = 2
+
+[node name="mouth_position" type="Marker3D" parent="Armature/Skeleton3D/mouth" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, -8.47033e-22, 0, -4.23516e-22, 1, 0, 0, 0, 1, -1.93207e-14, 0.188874, 0.452671)
+gizmo_extents = 0.0
+
+[node name="mouth_sprite" type="Sprite3D" parent="Armature/Skeleton3D/mouth/mouth_position" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, 6.35275e-22, 0, -8.47033e-22, 1, 0, 0, 0, 1, 6.98023e-16, -0.000320196, -0.016354)
+pixel_size = 0.0013
+double_sided = false
+texture = ExtResource("6_64er2")
+
+[node name="hair" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="5"]
+unique_name_in_owner = true
+transform = Transform3D(1, -2.95384e-15, 4.3629e-16, 1.48286e-15, 0.995177, -0.0980937, -2.90276e-14, 0.0980937, 0.995177, 5.12551e-11, 1.06925, 0.0352382)
+bone_name = "spine.002"
+bone_idx = 2
+
+[node name="hair_position" type="Marker3D" parent="Armature/Skeleton3D/hair" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, -2.96462e-21, 0, -1.48231e-21, 1, 0, 0, 0, 1, 7.57805e-16, 0.49538, 0.00764949)
+gizmo_extents = 0.0
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "idle"

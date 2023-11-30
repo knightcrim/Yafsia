@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Nose" load_steps=3 format=3 uid="uid://bi3imkl74oj16"]
+
+[ext_resource type="Texture2D" uid="uid://1k1i2jxdma3f" path="res://assets/actors/sprites/char_nose1.svg" id="1_0ip0k"]
+[ext_resource type="Script" path="res://src/character_builder/nose.gd" id="2_n7bcd"]
+
+[resource]
+script = ExtResource("2_n7bcd")
+nose = ExtResource("1_0ip0k")
+name = "Nose 01"
+available_in_builder = true
+offset_and_scale = null

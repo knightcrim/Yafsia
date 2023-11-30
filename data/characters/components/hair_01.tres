@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Hair" load_steps=3 format=3 uid="uid://dv2omqc765688"]
+
+[ext_resource type="PackedScene" uid="uid://bi87wlykbr71w" path="res://assets/actors/models/hair1.tscn" id="1_gvhjd"]
+[ext_resource type="Script" path="res://src/character_builder/hair.gd" id="1_k25ls"]
+
+[resource]
+script = ExtResource("1_k25ls")
+hair = ExtResource("1_gvhjd")
+name = "Hair Short 01"
+available_in_builder = true
+offset = Vector3(0, 0, 0)
+scale = 0.0
